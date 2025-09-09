@@ -1,6 +1,13 @@
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, BatchNormalization
 
+
+"""
+# Descripción:
+# arquitectura_1() implementa una red neuronal convolucional con tres bloques de convolución y pooling,
+# seguida de capas densas y dropout, diseñada para extraer y combinar características de imágenes
+# de tamaño 32x32x3, optimizada para tareas de clasificación como CIFAR-10.
+"""
 def arquitectura_1():
     model = Sequential()
 
