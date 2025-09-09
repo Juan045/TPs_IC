@@ -54,7 +54,7 @@ print(model.summary())  # Muestra la arquitectura y cantidad de parámetros entr
 # Entrenamos con Adam
 history_adam = model.fit(x_train, y_train,
                          validation_data=(x_test, y_test),
-                         epochs=2, batch_size=64, verbose=1)
+                         epochs=20, batch_size=64, verbose=1)
 
 # -------------------------
 # 4. Evaluación
@@ -77,7 +77,7 @@ model_sgd.compile(optimizer=SGD(learning_rate=0.01, momentum=0.9),
 # Entrenamos con SGD
 history_sgd = model_sgd.fit(x_train, y_train,
                             validation_data=(x_test, y_test),
-                            epochs=2, batch_size=64, verbose=1)
+                            epochs=20, batch_size=64, verbose=1)
 
 # Evaluamos el modelo entrenado con SGD
 loss_sgd, acc_sgd = model_sgd.evaluate(x_test, y_test, verbose=0)
