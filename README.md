@@ -1,8 +1,8 @@
-<h1 style="color: #AB1600;">Repositorio de los TPs de IC</h1>
+# 🟥 Repositorio de los TPs de IC
 
 Para ir hacia un trabajo practico cambiar de rama
 
-<h2 style="color: #DE891B"> Hacer una rama por cada TP </h2>
+## 🟧 Hacer una rama por cada TP
 
 * El TP de CNN tiene su propia rama (TP_CNN)
 * El TP de Algoritmos Geneticos tiene su propia rama (TP_AG)
