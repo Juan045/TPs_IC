@@ -4,11 +4,11 @@ from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropou
 
 """
 # Descripción:
-# arquitectura_1() implementa una red neuronal convolucional con tres bloques de convolución y pooling,
+# arquitectura() implementa una red neuronal convolucional con tres bloques de convolución y pooling,
 # seguida de capas densas y dropout, diseñada para extraer y combinar características de imágenes
 # de tamaño 32x32x3, optimizada para tareas de clasificación como CIFAR-10.
 """
-def arquitectura_1():
+def arquitectura():
     model = Sequential()
 
     # Bloque 1: detección de características simples (bordes, líneas)
@@ -20,7 +20,7 @@ def arquitectura_1():
     model.add(Conv2D(32, (3,3), activation='relu', padding='same'))
     # MaxPooling reduce la dimensión espacial (submuestreo), manteniendo lo más relevante.
     model.add(MaxPooling2D((2,2)))
-    # Dropout apaga aleatoriamente neuronas para evitar overfitting.
+    # Evitar overfitting.
     model.add(Dropout(0.25))
 
     # Bloque 2: características intermedias (texturas, formas simples)
@@ -37,12 +37,9 @@ def arquitectura_1():
     model.add(MaxPooling2D((2,2)))
     model.add(Dropout(0.25))
 
-    # Clasificación final
-    # Flatten transforma los mapas de características en un vector 1D.
+
     model.add(Flatten())
-    # Dense con ReLU combina las características extraídas para la clasificación.
     model.add(Dense(256, activation='relu'))
-    # Dropout adicional para evitar sobreajuste en la capa densa.
     model.add(Dropout(0.5))
     # Capa de salida: 10 neuronas (una por clase de CIFAR-10), activación softmax para obtener probabilidades.
     model.add(Dense(10, activation='softmax'))
