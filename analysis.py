@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # ======== CONFIGURACIÓN ========
 # Cambia esta ruta según donde hayas extraído el dataset
-dataset_path = ""
+dataset_path = "../ASL_Alphabet_Dataset/asl_alphabet_train"
 # ================================
 
 
