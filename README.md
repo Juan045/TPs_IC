@@ -10,9 +10,15 @@ Para ir hacia un trabajo practico cambiar de rama
 
 >Cualquier cambio que no se desee poner en la rama del tp hasta que se este seguro de implementar el cambio, crearla con el nombre _branch/[Nombre del TP]_
 
-## 🟩 Que se resuelve en esta rama (TP_Caso)
+## 🟩 Que se resuelve en la rama (TP_Caso)
 
 Clasificacion del alfabeto dactilologico ASL (29 clases: A-Z mas `del`, `nothing` y `space`) mediante **transfer learning**, y su puesta a prueba sobre **video real**, fuera de las imagenes con las que se entreno.
+
+### Dataset
+
+[ASL (American Sign Language) Alphabet Dataset](https://www.kaggle.com/datasets/debashishsau/aslamerican-sign-language-aplhabet-dataset) — Kaggle. 29 clases con imagenes de 200x200.
+
+La ruta local se configura en la variable `dataset_dir` de cada script de entrenamiento.
 
 ### Archivos
 
@@ -30,6 +36,8 @@ Clasificacion del alfabeto dactilologico ASL (29 clases: A-Z mas `del`, `nothing
 Los scripts de entrenamiento guardan el mejor modelo via `ModelCheckpoint` en un archivo `.h5`. Los scripts de video **no llaman a los de entrenamiento**: son independientes y solo consumen ese `.h5` a traves de `load_model()`, por lo que hay que apuntar `MODEL_PATH` al archivo generado.
 
 ### Resultados y limitaciones
+
+📹 **Video utilizado en la prueba final:** [Ver en YouTube](https://www.youtube.com/watch?v=6_gXiBe9y9A)
 
 El modelo **reconoce correctamente los simbolos de la mano**: sobre imagenes del mismo dominio que el entrenamiento la clasificacion es acertada, y en video la deteccion y el recorte de la mano con MediaPipe funcionan bien.
 
